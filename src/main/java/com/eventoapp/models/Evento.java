@@ -55,10 +55,9 @@ public class Evento implements Serializable {
     public void setHorario(String horario) {
         this.horario = horario;
     }
-
-    
-
-    
-    
+    public static long getSerialversionuid() {
+        return serialVersionUID;
+    }
+   
 
 }

@@ -1,5 +1,6 @@
 package com.eventoapp.models;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -19,6 +20,7 @@ public class Convidado {
   public void setRg(String rg) {
     this.rg = rg;
   }
+
   public String getNomeConvidado() {
     return nomeConvidado;
   }
