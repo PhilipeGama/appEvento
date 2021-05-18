@@ -23,14 +23,27 @@
             <p>Data: <span th:text="${evento.data}"></span></p>
             <p>Horário: <span th:text="${evento.horario}"></span></p>
         </div>
+        <th:block th:include="mensagemValidacao"></th:block>
         <form method="post">
-            <input type="text" value="" name="nomeConvidado"/>
-            <input type="text" value="" name="rg"/>
+            <input type="text" value="" name="nomeConvidado" placeholder="Nome Completo"/>
+            <input type="text" value="" name="rg" placeholder="AA 00.000.000" class="validate"/>
             
             <button type="submit" class="waves-effect waves-light btn">Cadastrar</button>
         </form>
+      
     </div>
-
+    <h5>Lista de convidados</h5>
+    <div class="container" th:each="convidado: ${convidados}">
+      
+        <div class="row">
+            <div class="input-field col s6">
+                <p><span th:text="${convidado.nomeConvidado}"></span></p>
+            </div>
+            <div class="input-field col s3">
+                <p><span th:text="${convidado.rg}"></span></p>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
 </html>
