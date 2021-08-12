@@ -12,7 +12,7 @@
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="style/stylecss.css">
+        <link rel="stylesheet" href="style/style.css">
 
     </head>
 
@@ -22,12 +22,16 @@
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">Lista de Eventos</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i
+                    <li><a href="/cadastrarEvento" ><i
                                 class="material-icons left">add_circle_outline</i>Cadastrar evento</a></li>
                 </ul>
+                <a href="#" data-target="mobile-links" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             </div>
         </nav>
-
+        <ul class="sidenav" id="mobile-links">
+            <li><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i
+                class="material-icons left">add_circle_outline</i>Cadastrar evento</a></li>
+        </ul>
     </header>
     <table class="container">
         <thead>
@@ -56,6 +60,11 @@
     </table>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $('.sidenav').sidenav();
+        });
+    </script>
 </body>
 
 </html>
