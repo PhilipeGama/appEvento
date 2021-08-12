@@ -19,15 +19,21 @@
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">Evento</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/eventos" class="waves-effect waves-light btn"><i
+                    <li><a href="/eventos" ><i
                                 class="material-icons left">add_circle_outline</i>Lista de Evento</a></li>
                 </ul>
+                <a href="#" data-target="mobile-links" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             </div>
         </nav>
 
+        <ul class="sidenav" id="mobile-links">
+            <li><a href="/eventos" class="waves-effect waves-light btn"><i
+                class="material-icons left">add_circle_outline</i>Listar de
+                Eventos</a></li>
+        </ul>
     </header>
 
-    <div th:each="evento : ${evento}" class="container detalhesEvento">
+    <div th:each="evento : ${evento}" class="container event-detail">
         <h5>Detalhes do Evento</h5>
         <div class="row">
             <p>Nome: <span th:text="${evento.nome}"></span></p>
@@ -37,7 +43,7 @@
         </div>
         <th:block th:include="mensagemValidacao"></th:block>
     </div>
-    <div class="container formConvidado">
+    <div class="container form-container">
         <form method="post">
             <input type="text" value="" name="nomeConvidado" placeholder="Nome Completo" />
             <input type="text" value="" name="rg" placeholder="AA 00.000.000" class="validate" />
@@ -62,7 +68,13 @@
             </tr>
         </tbody>
     </table>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $('.sidenav').sidenav();
+        });
+    </script>
 </body>
 
 </html>
